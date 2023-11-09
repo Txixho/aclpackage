@@ -8,7 +8,6 @@ use Fbaconsulting\Aclpackage\Http\Controllers\PerfilRutaController;
 use Fbaconsulting\Aclpackage\Http\Controllers\TablaRutasController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-use Fbaconsulting\Aclpackage\Http\Controllers\DashboardController;
 use Fbaconsulting\Aclpackage\Http\Controllers\UsuariosController;
 
 
