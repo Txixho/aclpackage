@@ -25,6 +25,8 @@ class ComprobarAccesoRuta
         $routeName = $request->route()->getName();
         $user = $request->user();
 
+        dd($user);
+
         if (!$user) {
             return redirect('login');
         }
