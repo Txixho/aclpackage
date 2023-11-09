@@ -38,8 +38,18 @@ protected $routeMiddleware = [
 'rutaUsuario' => \App\Http\Middleware\ComprobarRutaUsuario::class,
 ];
 ```
+### Paso 4: Registrar el ServiceProvider
+Una vez que el paquete esté instalado, deberás registrar el ServiceProvider en tu archivo `config/app.php`. Agrega la siguiente línea en el array providers:
 
-### Paso 4: Asignar Middleware a las Rutas
+```
+'providers' => [
+    // ...
+    Fbaconsulting\Aclpackage\AclPackageServiceProvider::class,
+],
+```
+
+
+### Paso 5: Asignar Middleware a las Rutas
 Por último, necesitas asignar el middleware a las rutas que quieras proteger en tu aplicación Laravel. Agrega el middleware a tus rutas en los archivos de rutas como `routes/web.php`:
 
 ```
