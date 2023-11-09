@@ -8,7 +8,7 @@ Para instalar el paquete, sigue estos pasos:
 
 ### Paso 1: Agregar el Repositorio de GitHub
 
-Primero, necesitarás decirle a Composer dónde encontrar tu paquete. Agrega el repositorio a la sección `repositories` en el `composer.json` de tu proyecto Laravel:
+Primero, necesitarás decirle a Composer dónde encontrar tu paquete. Agrega el repositorio a la sección `repositories` (si no existe agrégala) en el `composer.json` de tu proyecto Laravel:
 
 ```json
 {
