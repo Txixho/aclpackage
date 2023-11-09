@@ -1,0 +1,21 @@
+{
+    "name": "fbaconsulting/aclpackage",
+    "description": "Paquete acl para Users",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Fbaconsulting\\Aclpackage\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Jairo Alvite",
+            "email": "jairo.alvite@fba-consulting.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "laravel/framework": "^8.0"
+    }
+}
