@@ -45,17 +45,17 @@ Por último, necesitas asignar el middleware a las rutas que quieras proteger en
 ```
 Route::get('/ruta-protegida', function () {
 // ... (tu lógica para la ruta)
-})->middleware('rutaUsuario');
+})->middleware('ruta');
 ```
 Reemplaza /ruta-protegida con la ruta específica que quieres proteger.
 También podrías aplicarlo a grupos de rutas:
 
 ```
-Route::middleware(['rutaUsuario'])->group(function () {
+Route::middleware(['ruta'])->group(function () {
 
     Route::get('/ruta-protegida', [MyContoller::class, 'index'])->name('index');
 });
 ```
 
 ### Uso
-Una vez terminados estos pasos, las rutas a las que hayas aplicado el middleware solo serán accesibles si el perfil del usuario autenticado tiene acceso a esas rutas.
+Si usas el middleware con alias `ruta`, limitarás el acceso a los usuarios cuyo perfil tenga acceso a esa ruta. Si utilizas el middleware con alias `usuarioRuta` también permitirá acceso a la ruta si el usuario_id coincide con el id requerido en la ruta.
