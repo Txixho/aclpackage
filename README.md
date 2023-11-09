@@ -34,8 +34,8 @@ Después de instalar el paquete, debes registrar manualmente los middleware prop
 ```
 protected $routeMiddleware = [
 // ... (otros middlewares)
-'ruta' => \App\Http\Middleware\ComprobarAccesoRuta::class,
-'rutaUsuario' => \App\Http\Middleware\ComprobarRutaUsuario::class,
+'ruta' => \Fbaconsulting\Aclpackage\Http\Middleware\ComprobarAccesoRuta::class,
+'rutaUsuario' => \Fbaconsulting\Aclpackage\Http\Middleware\ComprobarRutaUsuario::class,
 ];
 ```
 ### Paso 4: Registrar el ServiceProvider
