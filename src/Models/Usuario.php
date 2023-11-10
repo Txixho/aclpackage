@@ -3,6 +3,7 @@
 namespace Fbaconsulting\Aclpackage\Models;
 
 use Fbaconsulting\Aclpackage\Models\Cliente;
+use Fbaconsulting\Aclpackage\Models\PerfilClientesUsuario;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Auth\User as BaseUser;
