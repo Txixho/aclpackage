@@ -28,17 +28,8 @@ composer require fbaconsulting/aclpackage
 ```
 Este comando descargará e instalará el paquete en tu proyecto.
 
-### Paso 3: Registrar Middlewares
-Después de instalar el paquete, debes registrar manualmente los middleware proporcionados por el paquete. Añade las siguientes líneas al archivo `app/Http/Kernel.php` en la sección `routeMiddleware` de tu proyecto Laravel:
 
-```
-protected $routeMiddleware = [
-// ... (otros middlewares)
-'ruta' => \Fbaconsulting\Aclpackage\Http\Middleware\ComprobarAccesoRuta::class,
-'rutaUsuario' => \Fbaconsulting\Aclpackage\Http\Middleware\ComprobarRutaUsuario::class,
-];
-```
-### Paso 4: Registrar el ServiceProvider
+### Paso 3: Registrar el ServiceProvider
 Una vez que el paquete esté instalado, deberás registrar el ServiceProvider en tu archivo `config/app.php`. Agrega la siguiente línea en el array providers:
 
 ```
@@ -47,7 +38,7 @@ Una vez que el paquete esté instalado, deberás registrar el ServiceProvider en
     Fbaconsulting\Aclpackage\AclPackageServiceProvider::class,
 ],
 ```
-### Paso 5: Registrar el modelo Usuario
+### Paso 4: Registrar el modelo Usuario
 Deberás registar el modelo Uusario en tu archivo `config/auth.php`. Agrega la siguiente línea en el array users de providers:
 
 ```
@@ -58,23 +49,23 @@ Deberás registar el modelo Uusario en tu archivo `config/auth.php`. Agrega la s
         ],
 ```
 
-### Paso 6: Asignar Middleware a las Rutas
+### Paso 5: Asignar Middleware a las Rutas
 Por último, necesitas asignar el middleware a las rutas que quieras proteger en tu aplicación Laravel. Agrega el middleware a tus rutas en los archivos de rutas como `routes/web.php`:
 
 ```
 Route::get('/ruta-protegida', function () {
 // ... (tu lógica para la ruta)
-})->middleware('ruta');
+})->middleware('comprobar.ruta');
 ```
 Reemplaza /ruta-protegida con la ruta específica que quieres proteger.
 También podrías aplicarlo a grupos de rutas:
 
 ```
-Route::middleware(['ruta'])->group(function () {
+Route::middleware(['comprobar.ruta'])->group(function () {
 
     Route::get('/ruta-protegida', [MyContoller::class, 'index'])->name('index');
 });
 ```
 
 ### Uso
-Si usas el middleware con alias `ruta`, limitarás el acceso a los usuarios cuyo perfil tenga acceso a esa ruta. Si utilizas el middleware con alias `usuarioRuta` también permitirá acceso a la ruta si el usuario_id coincide con el id requerido en la ruta.
+Si usas el middleware con alias `comprobar.ruta`, limitarás el acceso a los usuarios cuyo perfil tenga acceso a esa ruta. Si utilizas el middleware con alias `comprobar.usuario.ruta` también permitirá acceso a la ruta si el usuario_id coincide con el id requerido en la ruta.

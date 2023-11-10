@@ -18,9 +18,9 @@ class AclPackageServiceProvider extends ServiceProvider
         // Obtener el router a través del contenedor de servicios de Laravel
         $router = $this->app['router'];
         // Registrar middlewares
-        $router->aliasMiddleware('rutaUsuario', ComprobarRutaUsuario::class);
+        $router->aliasMiddleware('comprobar.usuario.ruta', ComprobarRutaUsuario::class);
 
-        $router->aliasMiddleware('ruta', ComprobarAccesoRuta::class);
+        $router->aliasMiddleware('comprobar.ruta', ComprobarAccesoRuta::class);
 
     // Aquí también puedes registrar rutas, vistas, y publicar archivos de configuración.
     }
