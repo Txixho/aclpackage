@@ -47,9 +47,18 @@ Una vez que el paquete esté instalado, deberás registrar el ServiceProvider en
     Fbaconsulting\Aclpackage\AclPackageServiceProvider::class,
 ],
 ```
+### Paso 5: Registrar el modelo Usuario
+Deberás registar el modelo Uusario en tu archivo `config/auth.php`. Agrega la siguiente línea en el array users de providers:
 
+```
+'providers' => [
+        'users' => [
+            //...
+            'model' => Fbaconsulting\Aclpackage\Models\Usuario::class,
+        ],
+```
 
-### Paso 5: Asignar Middleware a las Rutas
+### Paso 6: Asignar Middleware a las Rutas
 Por último, necesitas asignar el middleware a las rutas que quieras proteger en tu aplicación Laravel. Agrega el middleware a tus rutas en los archivos de rutas como `routes/web.php`:
 
 ```
